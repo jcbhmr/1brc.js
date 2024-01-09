@@ -20,7 +20,6 @@
 
 - Custom hashmap with 2-byte hashes. Right now I just use the builtin `Map`, which is too general purpose for this task, hence quite slow, around 30% of spent time is on the Map.
 - Set higher watermarks for the GC, it might save some milliseconds too.
-- Figure out how Bun gets so fast. It's also strange that i get processing time of
 - Do fewer allocations. Right now for each station name in each row a new string gets allocated.
 
 ### Problems with Bun
