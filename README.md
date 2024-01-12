@@ -24,7 +24,7 @@
 
 ### Problems with Bun
 
-I noted that it "potentially" runs in 14s. The problem with Bun is that i caught a bug where i couldnt read the file at random position if that random position is greater that around 65k (the size of the buffer). But a tenth of the `measurements.txt` file got processed in 13s on just one core, so if Bun fixes it's seek-and-read feature then on my 10 core machine it'll probably fit in 14s range accounting for the final results formation, thus being faster by 40%.
+I noted that it "potentially" runs in 14s. The problem with Bun is that i caught a bug where i couldnt read the file at random position if that random position is greater that around 65k (the size of the buffer). But a tenth of the `measurements.txt` file got processed in 13s on just one core, so if Bun fixes it's seek-and-read feature then on my 10 core machine it'll probably fit in 14s range accounting for the final results formation, thus being faster by 40% than node.js.
 
 ### Try out:
 
