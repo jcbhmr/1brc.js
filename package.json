@@ -4,7 +4,8 @@
     "setup": "make setup",
     "run": "make run",
     "bench": "make bench",
-    "generate": "java --enable-preview --source=21 generate.java"
+    "generate": "java --enable-preview --source=21 generate.java 1000000000",
+    "generate:test": "java --enable-preview --source=21 generate.java 1000000"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
