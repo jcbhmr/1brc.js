@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "setup": "make setup",
+    "run": "make run",
+    "bench": "make bench",
+    "generate": "java --enable-preview --source=21 generate.java"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

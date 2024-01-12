@@ -1,0 +1,17 @@
+name: npm run bench
+jobs:
+  npm-run-bench:
+    runs-on: buildjet-8vcpu-ubuntu-2204
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: npm
+      - uses: denoland/setup-deno@v1
+      - uses: oven-sh/setup-bun@v1
+      - run: npm ci
+      - run: npm run generate
+      - run: npm run bench name="$NAME" | tee -a "$GITHUB_STEP_SUMMARY"
+        env:
+          NAME: ${{ github.actor }}
