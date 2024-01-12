@@ -66,7 +66,7 @@ if (workerThreads.isMainThread) {
   let stoppedWorkers = 0;
 
   for (let i = 0; i < chunkOffsets.length; i++) {
-    const worker = new workerThreads.Worker('./src/main/nodejs/index.js', {
+    const worker = new workerThreads.Worker(new URL(import.meta.url), {
       workerData: {
         fileName,
         start: i === 0 ? 0 : chunkOffsets[i - 1],

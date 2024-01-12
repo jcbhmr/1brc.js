@@ -8,9 +8,10 @@ setup:
 run:
 	test -n "$(name)"
 	echo "Running $(name)"
-	file=$$(echo "src/$(name).{js,mjs,cjs,jsx,ts,mts,cts,tsx}") \
-	cmd=$$(head -n1 "$$file" | cut -c 2-) \
-	time $$cmd "$$file"
+	file="src/$(name).js" ;\
+	test -f "$$file" || file="src/$(name).ts" ;\
+	cmd=$$(head -n1 "$$file" | cut -c 3-) ;\
+	time $$cmd "$$file" "measurements.txt"
 
 run-reference:
 	time bun reference.ts
